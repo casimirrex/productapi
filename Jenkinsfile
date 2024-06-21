@@ -26,10 +26,10 @@ pipeline {
         }
         stage('Start Application') {
             steps {
-                // Start the Angular application in the background
-                sh 'nohup npm start &'
-                // Output log for debugging
-                sh 'sleep 10 && tail -n 50 nohup.out'
+                // Start the Angular application in the background and redirect output to a log file
+                sh 'nohup npm start > output.log 2>&1 &'
+                // Ensure the nohup.out file is created
+                sh 'sleep 10 && tail -n 50 output.log'
             }
         }
         stage('Wait for Server') {
