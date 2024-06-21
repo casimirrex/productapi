@@ -28,12 +28,14 @@ pipeline {
             steps {
                 // Start the Angular application in the background
                 sh 'nohup npm start &'
+                // Output log for debugging
+                sh 'sleep 10 && tail -n 50 nohup.out'
             }
         }
         stage('Wait for Server') {
             steps {
-                // Wait for the server to start
-                sleep 20
+                // Increase wait time to ensure server starts
+                sleep 40
             }
         }
         stage('Validate Page') {
