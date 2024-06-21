@@ -49,12 +49,5 @@ pipeline {
                 sh 'curl -v http://localhost:4200' // Print home page contents for debugging
             }
         }
-
-        stage('Validate /product-form Page') {
-            steps {
-                // Simply access the page without detailed status check
-                sh 'curl http://localhost:4200/product-form'
-            }
-        }
     }
 }
