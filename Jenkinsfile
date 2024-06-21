@@ -27,7 +27,12 @@ pipeline {
         stage('Kill Existing Process') {
             steps {
                 // Kill any existing process on port 4200
-                sh 'fuser -k 4200/tcp || true'
+                sh '''
+                    PID=$(lsof -t -i:4200)
+                    if [ -n "$PID" ]; then
+                      kill -9 $PID
+                    fi
+                '''
             }
         }
         stage('Start Application') {
