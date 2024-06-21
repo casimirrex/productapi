@@ -24,18 +24,24 @@ pipeline {
                 sh 'npm run build --prod'
             }
         }
+        stage('Kill Existing Process') {
+            steps {
+                // Kill any existing process on port 4200
+                sh 'fuser -k 4200/tcp || true'
+            }
+        }
         stage('Start Application') {
             steps {
                 // Start the Angular application in the background and redirect output to a log file
                 sh 'nohup npm start > output.log 2>&1 &'
-                // Ensure the nohup.out file is created
-                sh 'sleep 10 && tail -n 50 output.log'
+                // Ensure the log file is created and display its content
+                sh 'sleep 20 && tail -n 50 output.log'
             }
         }
         stage('Wait for Server') {
             steps {
                 // Increase wait time to ensure server starts
-                sleep 40
+                sleep 60
             }
         }
         stage('Validate Page') {
