@@ -1,0 +1,28 @@
+/* src/app/product-list/product-list.component.css */
+
+.product-item {
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin: 16px 0;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .product-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .product-item h3 {
+    margin: 0 0 8px;
+    font-size: 1.5em;
+    color: #333;
+  }
+  
+  .product-item p {
+    margin: 4px 0;
+  }
+  
+  .product-item a {
+    text-decoration: none;
+    color: inherit;
+  }

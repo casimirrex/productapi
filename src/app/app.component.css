@@ -1,0 +1,21 @@
+/* src/app/app.component.css */
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 16px;
+  }
+  
+  .nav-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    margin: 0 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .nav-link:hover {
+    background-color: #575757;
+  }

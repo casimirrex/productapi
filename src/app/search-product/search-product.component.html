@@ -1,0 +1,18 @@
+<!-- src/app/search-product/search-product.component.html -->
+
+<div class="search-container">
+  <input type="number" [(ngModel)]="productId" placeholder="Enter product ID" />
+  <button (click)="searchProduct()">Search Product</button>
+</div>
+
+<div *ngIf="product" class="product-detail">
+  <h2>{{ product.name }}</h2>
+  <p>{{ product.description }}</p>
+  <p class="price">{{ product.price | currency }}</p>
+  <p class="stock">In Stock: {{ product.inStock ? 'Yes' : 'No' }}</p>
+  <p class="stock-status">Stock Status: {{ product.stockStatus }}</p>
+  <p class="number-of-items">Number of Items: {{ product.numberOfItems }}</p>
+</div>
+<div *ngIf="!product">
+  <p>Product not found.</p>
+</div>

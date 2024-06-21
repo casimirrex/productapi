@@ -1,0 +1,45 @@
+<div class="product-form-container">
+  <h2>{{ isEdit ? 'Edit' : 'Create' }} Product</h2>
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input id="name" formControlName="name" type="text" />
+      <div *ngIf="productForm.get('name')?.invalid && productForm.get('name')?.touched" class="error">
+        Name is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <input id="description" formControlName="description" type="text" />
+      <div *ngIf="productForm.get('description')?.invalid && productForm.get('description')?.touched" class="error">
+        Description is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="price">Price:</label>
+      <input id="price" formControlName="price" type="number" />
+      <div *ngIf="productForm.get('price')?.invalid && productForm.get('price')?.touched" class="error">
+        Price is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inStock">In Stock:</label>
+      <input id="inStock" formControlName="inStock" type="checkbox" />
+    </div>
+    <div class="form-group">
+      <label for="stockStatus">Stock Status:</label>
+      <select id="stockStatus" formControlName="stockStatus">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="numberOfItems">Number of Items:</label>
+      <input id="numberOfItems" formControlName="numberOfItems" type="number" />
+      <div *ngIf="productForm.get('numberOfItems')?.invalid && productForm.get('numberOfItems')?.touched" class="error">
+        Number of Items is required.
+      </div>
+    </div>
+    <button type="submit" [disabled]="productForm.invalid">{{ isEdit ? 'Update' : 'Create' }} Product</button>
+  </form>
+</div>

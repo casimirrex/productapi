@@ -1,0 +1,13 @@
+<!-- src/app/product-detail/product-detail.component.html -->
+
+<div *ngIf="product" class="product-detail">
+  <h2>{{ product.name }}</h2>
+  <p>{{ product.description }}</p>
+  <p class="price">{{ product.price | currency }}</p>
+  <p class="stock">In Stock: {{ product.inStock ? 'Yes' : 'No' }}</p>
+  <p class="stock-status">Stock Status: {{ product.stockStatus }}</p>
+  <p class="number-of-items">Number of Items: {{ product.numberOfItems }}</p>
+</div>
+<div *ngIf="!product">
+  <p>Loading product details...</p>
+</div>

@@ -1,0 +1,33 @@
+/* src/app/product-detail/product-detail.component.css */
+
+.product-detail {
+    border: 1px solid #ccc;
+    padding: 32px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 32px auto;
+    background-color: #f9f9f9;
+  }
+  
+  .product-detail h2 {
+    font-size: 2em;
+    margin-bottom: 16px;
+    color: #333;
+  }
+  
+  .product-detail p {
+    margin: 8px 0;
+    font-size: 1.2em;
+  }
+  
+  .product-detail .price {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #4caf50;
+  }
+  
+  .product-detail .stock {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #f44336;
+  }
